@@ -46,4 +46,4 @@ jobs:
 
 
       - name: Deploy frontend to Heroku on master
-        run: git push https://${{secrets.HEROKU_USER}}:${{secrets.HEROKU_API_KEY}}@git.heroku.com/waqas-test-prod.git HEAD:master
+        run: git push waqas-test-prod `git subtree split --prefix waqas master`:refs/heads/master --force
