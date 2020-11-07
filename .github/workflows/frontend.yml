@@ -41,20 +41,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      #   - name: Add frontend remote origin
-      #     run: git remote add waqas-test-prod https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-test-prod.git
+      - name: Add frontend remote origin
+        run: git remote add waqas-test-prod https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-test-prod.git
 
-      #   - name: Deploy frontend to Heroku on master
-      #     run: git push waqas-test-prod `git subtree split --prefix waqas master`:refs/heads/master --force
-      - name: Login to Heroku Container registry
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:login
-      - name: Build and push
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:push -a waqas-test-prod web
-      - name: Release
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:release -a waqas-test-prod web
+      - name: Deploy frontend to Heroku on master
+        run: run: git push -f https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-test-prod.git origin/master:master
+
