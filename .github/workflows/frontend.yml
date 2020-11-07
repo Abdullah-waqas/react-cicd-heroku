@@ -45,5 +45,5 @@ jobs:
         run: git remote add waqas-test-prod https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-test-prod.git
 
       - name: Deploy frontend to Heroku on master
-        run: run: git push -f https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-test-prod.git origin/master:master
+        run: git push -f https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-test-prod.git origin/master:master
 
