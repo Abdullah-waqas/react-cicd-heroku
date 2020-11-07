@@ -47,4 +47,4 @@ jobs:
       - name: Unshallow
         run: git fetch --all --unshallow
       - name: Deploy frontend to Heroku on master
-        run: git push heroky HEAD:master -f
+        run: git push heroku HEAD:master -f
