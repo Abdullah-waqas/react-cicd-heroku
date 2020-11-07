@@ -47,5 +47,4 @@ jobs:
       - name: Unshallow
         run: git fetch --all --unshallow
       - name: Deploy frontend to Heroku on master
-        run: git push -f https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-qa.git origin/master:master
-
+        run: git push heroky HEAD:master -f
