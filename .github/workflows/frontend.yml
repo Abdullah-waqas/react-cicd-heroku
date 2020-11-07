@@ -42,4 +42,4 @@ jobs:
         run: npm run build
 
       - name: Deploy frontend to Heroku on master
-        run: git push https://${{HEROKU_USER}}:${{HEROKU_API_KEY}}@git.heroku.com/waqas-test-prod.git HEAD:master
+        run: git push https://${{secrets.HEROKU_USER}}:${{secrets.HEROKU_API_KEY}}@git.heroku.com/waqas-test-prod.git HEAD:master
