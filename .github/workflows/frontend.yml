@@ -42,10 +42,10 @@ jobs:
         run: npm run build
 
       - name: Add frontend remote origin
-        run: git remote add waqas-test-prod https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-test-prod.git
+        run: git remote add waqas-qa https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-qa.git
 
       - name: Unshallow
         run: git fetch --all --unshallow
       - name: Deploy frontend to Heroku on master
-        run: git push -f https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-test-prod.git origin/master:master
+        run: git push -f https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/waqas-qa.git origin/master:master
 
