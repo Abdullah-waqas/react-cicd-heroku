@@ -4,7 +4,6 @@ on:
   push:
     branches: [master]
     paths:
-      - "client/**"
       - ".github/workflows/frontend.yml"
   pull_request:
     branches: [master]
@@ -34,13 +33,13 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies
-        run: cd client && npm install
+        run: npm install
 
       - name: Run the tests
-        run: cd client && npm test
+        run: npm test
 
       - name: Build
-        run: cd client && npm run build
+        run: npm run build
 
       - name: Add frontend remote origin
         run: git remote add waqas-qa https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
